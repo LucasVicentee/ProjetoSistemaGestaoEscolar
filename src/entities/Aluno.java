@@ -16,10 +16,12 @@ public class Aluno extends Pessoa {
     }
 
     public void adicionarMateria(String materias) {
+
         this.materias.add(materias);
     }
 
     public void removerMateria(String materias) {
+
         this.materias.remove(materias);
     }
 
@@ -28,22 +30,24 @@ public class Aluno extends Pessoa {
     }
 
     public double getNota() {
+
         return nota;
     }
 
     public void setNota(double nota) {
+
         this.nota = nota;
     }
 
     public int getRa() {
+
         return ra;
     }
 
     public void setRa(int ra) {
+
         this.ra = ra;
     }
-
-
 
     @Override
     public String toString() {
