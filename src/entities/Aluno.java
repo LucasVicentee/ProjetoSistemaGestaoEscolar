@@ -15,6 +15,12 @@ public class Aluno extends Pessoa {
         this.ra = ra;
     }
 
+    public Aluno(String nome, int idade, String cpf, int ra) {
+        super(nome, idade, cpf);
+        this.materias = new ArrayList<>();
+        this.ra = ra;
+    }
+
     public void adicionarMateria(String materias) {
 
         this.materias.add(materias);
