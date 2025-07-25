@@ -59,6 +59,9 @@ public class Main {
 
                 Professor professor = new Professor(nome, idade, cpf, rf, salario);
                 break;
+            case 3:
+                System.out.println("Todos os alunos já cadastrados: ");
+
         }
 
 
