@@ -77,7 +77,7 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("Obrigado!");
-                    break;
+                    return;
                 default:
                     System.out.println("Opção inválida!");
             }
