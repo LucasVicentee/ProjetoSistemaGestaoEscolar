@@ -15,11 +15,12 @@ public class Main {
         ArrayList<Aluno> listaAlunos = new ArrayList<>();
         ArrayList<Professor> listaProfessores = new ArrayList<>();
 
-        System.out.print("Informe a opção desejada: ");
-        System.out.print("1 - Para cadastrar um aluno");
-        System.out.print("2 - Para cadastrar um professor");
-        System.out.print("3 - Para listar os alunos já cadastrados");
-        System.out.print("4 - Para listar os professores já cadastrados");
+        System.out.println("Informe a opção desejada: ");
+        System.out.println("1 - Para cadastrar um aluno");
+        System.out.println("2 - Para cadastrar um professor");
+        System.out.println("3 - Para listar os alunos já cadastrados");
+        System.out.println("4 - Para listar os professores já cadastrados");
+
         int opcao;
         opcao = sc.nextInt();
         sc.nextLine();
@@ -39,6 +40,7 @@ public class Main {
                 int ra = sc.nextInt();
 
                 Aluno aluno = new Aluno(nome, idade, cpf, ra);
+                listaAlunos.add(aluno);
                 break;
 
             case 2:
@@ -58,12 +60,23 @@ public class Main {
                 double salario = sc.nextDouble();
 
                 Professor professor = new Professor(nome, idade, cpf, rf, salario);
+                listaProfessores.add(professor);
                 break;
             case 3:
                 System.out.println("Todos os alunos já cadastrados: ");
-
+                for (Aluno a : listaAlunos) {
+                    System.out.println(a);
+                }
+                break;
+            case 4:
+                System.out.println("Todos os professores já cadastrados: ");
+                for (Professor p : listaProfessores) {
+                    System.out.println(p);
+                }
+                break;
+            default:
+                System.out.println("Opção inválida!");
         }
-
 
         sc.close();
     }
