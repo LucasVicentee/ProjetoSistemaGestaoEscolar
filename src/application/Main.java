@@ -87,7 +87,22 @@ public class Main {
                     int opMudarInfoAluno = sc.nextInt();
                     sc.nextLine();
                     if (opMudarInfoAluno == 1) {
-
+                        System.out.print("Informe o CPF do aluno que deseja alterar: ");
+                        String cpfAluno = sc.nextLine();
+                        boolean encontrado = false;
+                        for (Aluno a: listaAlunos) {
+                            if (a.getCpf().equals(cpfAluno)) {
+                                System.out.print("Novo nome: ");
+                                String novoNomeAluno = sc.nextLine();
+                                a.setNome(novoNomeAluno);
+                                System.out.println("Nome atualizado com sucesso!");
+                                encontrado = true;
+                                break;
+                            }
+                        }
+                        if (!encontrado) {
+                            System.out.println("Aluno do CPF" + cpfAluno + " não encontrado!");
+                        }
                     }
                 case 6:
                     System.out.println("Obrigado!");
