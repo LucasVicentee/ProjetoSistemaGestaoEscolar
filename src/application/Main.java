@@ -2,6 +2,8 @@ package application;
 
 import entities.Aluno;
 import entities.Professor;
+import entities.SistemaAlunos;
+import entities.SistemaProfessores;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -12,6 +14,10 @@ public class Main {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
+
+        SistemaAlunos sistemaAlun = new SistemaAlunos();
+        SistemaProfessores sistemaProf = new SistemaProfessores();
+
         ArrayList<Aluno> listaAlunos = new ArrayList<>();
         ArrayList<Professor> listaProfessores = new ArrayList<>();
 
@@ -22,7 +28,8 @@ public class Main {
             System.out.println("2 - Para cadastrar um professor");
             System.out.println("3 - Para listar os alunos já cadastrados");
             System.out.println("4 - Para listar os professores já cadastrados");
-            System.out.println("5 - Para Sair");
+            System.out.println("5 - Para modificar as informações de um aluno");
+            System.out.println("6 - Para Sair");
             System.out.print("Opção: ");
 
             int opcao;
@@ -65,17 +72,24 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Todos os alunos já cadastrados: ");
-                    for (Aluno a : listaAlunos) {
-                        System.out.println(a);
-                    }
+                    sistemaAlun.listarAlunos();
                     break;
                 case 4:
                     System.out.println("Todos os professores já cadastrados: ");
-                    for (Professor p : listaProfessores) {
-                        System.out.println(p);
-                    }
+                    sistemaProf.listarProfessor();
                     break;
                 case 5:
+                    System.out.println("Informe o que deseja ser mudado das informações do aluno: ");
+                    System.out.println("1 - Para modificar o nome");
+                    System.out.println("2 - Para modificar a idade");
+                    System.out.println("3 - Para modificar o CPF");
+                    System.out.println("4 - Para modificar o RA");
+                    int opMudarInfoAluno = sc.nextInt();
+                    sc.nextLine();
+                    if (opMudarInfoAluno == 1) {
+
+                    }
+                case 6:
                     System.out.println("Obrigado!");
                     return;
                 default:
