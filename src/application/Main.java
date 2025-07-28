@@ -81,16 +81,12 @@ public class Main {
                     System.out.println("2 - Para modificar a idade");
                     System.out.println("3 - Para modificar o CPF");
                     System.out.println("4 - Para modificar o RA");
-                    System.out.print("Opção escolhida: ");
-                    int opMudarInfoAluno = sc.nextInt();
-                    sc.nextLine();
-                    System.out.print("Informe o Cpf do aluno: ");
-                    String cpfAluno = sc.nextLine();
+                    int opMudarInfoAluno = leitor.lerInt("Opção escolhida: ");
+                    String cpfAluno = leitor.lerString("Informe o Cpf do aluno: ");
 
                     switch (opMudarInfoAluno) {
                         case 1:
-                            System.out.print("Informe o novo nome: ");
-                            String novoNome = sc.nextLine();
+                            String novoNome = leitor.lerString("Informe o novo nome: ");
                                 if (sistemaAlun.alterarNomeAluno(cpfAluno, novoNome)) {
                                     System.out.println("Nome alterado com sucesso!");
                                 }
@@ -99,9 +95,7 @@ public class Main {
                                 }
                             break;
                         case 2:
-                            System.out.print("Nova idade: ");
-                            int novaIdade = sc.nextInt();
-                            sc.nextLine();
+                            int novaIdade = leitor.lerInt("Nova idade: ");
                             sistemaAlun.alterarIdadeAluno(cpfAluno, novaIdade);
                             break;
                     }
@@ -111,8 +105,7 @@ public class Main {
                 default:
                     System.out.println("Opção inválida!");
             }
-            System.out.print("Deseja entrar novamente no menu de interação?: (S/N)");
-            repeticao = sc.next().charAt(0);
+            repeticao = leitor.lerChar("Deseja entrar novamente no menu de interação?: (S/N)");
         } while (repeticao == 'S' || repeticao == 's');
 
         sc.close();
