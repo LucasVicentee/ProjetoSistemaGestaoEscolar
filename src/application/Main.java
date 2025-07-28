@@ -2,7 +2,6 @@ package application;
 
 import entities.*;
 
-import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -24,6 +23,7 @@ public class Main {
             System.out.println("3 - Para listar os alunos já cadastrados");
             System.out.println("4 - Para listar os professores já cadastrados");
             System.out.println("5 - Para modificar as informações de um aluno");
+            System.out.println("5 - Para modificar as informações de um professor");
             System.out.println("6 - Para Sair");
             int opcao = leitor.lerInt("Opção: ");
 
@@ -79,7 +79,12 @@ public class Main {
                             break;
                     }
                 case 6:
-                    System.out.println("Obrigado!");
+                    System.out.println("Informe o que deseja ser mudado das informações do aluno: ");
+                    System.out.println("1 - Para modificar o nome");
+                    System.out.println("2 - Para modificar a idade");
+                    System.out.println("3 - Para modificar o CPF");
+                    System.out.println("4 - Para modificar o RF");
+                    System.out.println("5 - Para modificar o salário");
                     return;
                 default:
                     System.out.println("Opção inválida!");
