@@ -41,4 +41,24 @@ public class SistemaAlunos {
         }
         return false;
     }
+
+    public boolean alterarCpfAluno(String cpf, String novoCpf) {
+        for (Aluno aluno : listaAlunos) {
+            if (aluno.getCpf().equals(cpf)) {
+                aluno.setCpf(novoCpf);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean alterarRaAluno(String cpf, int novoRa) {
+        for (Aluno aluno : listaAlunos) {
+            if (aluno.getCpf().equals(cpf)) {
+                aluno.setRa(novoRa);
+                return true;
+            }
+        }
+        return false;
+    }
 }

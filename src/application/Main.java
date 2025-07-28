@@ -23,8 +23,8 @@ public class Main {
             System.out.println("3 - Para listar os alunos já cadastrados");
             System.out.println("4 - Para listar os professores já cadastrados");
             System.out.println("5 - Para modificar as informações de um aluno");
-            System.out.println("5 - Para modificar as informações de um professor");
-            System.out.println("6 - Para Sair");
+            System.out.println("6 - Para modificar as informações de um professor");
+            System.out.println("7 - Para Sair");
             int opcao = leitor.lerInt("Opção: ");
 
             switch (opcao) {
@@ -66,31 +66,54 @@ public class Main {
                     switch (opMudarInfoAluno) {
                         case 1:
                             String novoNome = leitor.lerString("Informe o novo nome: ");
-                                if (sistemaAlun.alterarNomeAluno(cpfAluno, novoNome)) {
-                                    System.out.println("Nome alterado com sucesso!");
-                                }
-                                else {
-                                    System.out.println("Aluno com CPF " + cpfAluno + " não encontrado.");
-                                }
+                            if (sistemaAlun.alterarNomeAluno(cpfAluno, novoNome)) {
+                                System.out.println("Nome alterado com sucesso!");
+                            }
+                            else {
+                                System.out.println("Aluno com o CPF " + cpfAluno + " não encontrado.");
+                            }
                             break;
                         case 2:
                             int novaIdade = leitor.lerInt("Nova idade: ");
-                            sistemaAlun.alterarIdadeAluno(cpfAluno, novaIdade);
+                            if (sistemaAlun.alterarIdadeAluno(cpfAluno, novaIdade)) {
+                                System.out.println("Idade alterada com sucesso!");
+                            }
+                            else {
+                                System.out.println("Aluno com o CPF " + cpfAluno + " não encontrado.");
+                            }
                             break;
+                        case 3:
+                            String novoCpf = leitor.lerString("Informe o novo CPF: ");
+                            if (sistemaAlun.alterarCpfAluno(cpfAluno, novoCpf)) {
+                                System.out.println("CPF alterado com sucesso!");
+                            }
+                            else {
+                                System.out.println("Aluno com o CPF " + cpfAluno + " não encontrado.");
+                            }
+                        case 4:
+                            int novoRa = leitor.lerInt("Informe o novo RA: ");
+                            if (sistemaAlun.alterarRaAluno(cpfAluno, novoRa)) {
+                                System.out.println("RA alterado com sucesso!");
+                            }
+                            else {
+                                System.out.println("Aluno com o CPF " + cpfAluno + " não encontrado.");
+                            }
                     }
+                    break;
                 case 6:
-                    System.out.println("Informe o que deseja ser mudado das informações do aluno: ");
+                    System.out.println("Informe o que deseja ser mudado das informações do professor: ");
                     System.out.println("1 - Para modificar o nome");
                     System.out.println("2 - Para modificar a idade");
                     System.out.println("3 - Para modificar o CPF");
                     System.out.println("4 - Para modificar o RF");
                     System.out.println("5 - Para modificar o salário");
-                    return;
+                    break;
                 default:
                     System.out.println("Opção inválida!");
             }
             repeticao = leitor.lerChar("Deseja entrar novamente no menu de interação?: (S/N)");
         } while (repeticao == 'S' || repeticao == 's');
+        System.out.println("Obrigado!");
 
         sc.close();
     }
