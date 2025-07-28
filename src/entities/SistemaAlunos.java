@@ -16,4 +16,24 @@ public class SistemaAlunos {
             System.out.println(aluno);
         }
     }
+
+    public boolean alterarNomeAluno(String cpf, String novoNome) {
+        for (Aluno aluno : listaAlunos) {
+            if (aluno.getCpf().equals(cpf)) {
+                aluno.setNome(novoNome);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean alterarIdadeAluno(String cpf, int novaIdade) {
+        for (Aluno aluno : listaAlunos) {
+            if (aluno.getCpf().equals(cpf)) {
+                aluno.setIdade(novaIdade);
+                return true;
+            }
+        }
+        return false;
+    }
 }

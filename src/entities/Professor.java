@@ -17,37 +17,30 @@ public class Professor extends Pessoa {
     }
 
     public void AdicionarMateria(String materias) {
-
         this.materias.add(materias);
     }
 
     public void removerMateria(String materias) {
-
         this.materias.add(materias);
     }
 
     public ArrayList<String> getMateria() {
-
         return materias;
     }
 
     public int getRf() {
-
         return rf;
     }
 
     public void setRf(int rf) {
-
         this.rf = rf;
     }
 
     public void setSalario(double salario) {
-
         this.salario = salario;
     }
 
     public double getSalario() {
-
         return salario;
     }
 

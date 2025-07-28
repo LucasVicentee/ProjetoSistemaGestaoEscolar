@@ -71,8 +71,15 @@ public class Main {
                     listaProfessores.add(professor);
                     break;
                 case 3:
-                    System.out.println("Todos os alunos já cadastrados: ");
-                    sistemaAlun.listarAlunos();
+                    if (!listaAlunos.isEmpty()) {
+                        System.out.println("Todos os alunos já cadastrados: ");
+                        for (Aluno alunoLista : listaAlunos) {
+                            System.out.println(alunoLista);
+                        }
+                    }
+                    else {
+                        System.out.println("Não há alunos cadastrados!");
+                    }
                     break;
                 case 4:
                     System.out.println("Todos os professores já cadastrados: ");
@@ -84,25 +91,29 @@ public class Main {
                     System.out.println("2 - Para modificar a idade");
                     System.out.println("3 - Para modificar o CPF");
                     System.out.println("4 - Para modificar o RA");
+                    System.out.print("Opção escolhida: ");
                     int opMudarInfoAluno = sc.nextInt();
                     sc.nextLine();
-                    if (opMudarInfoAluno == 1) {
-                        System.out.print("Informe o CPF do aluno que deseja alterar: ");
-                        String cpfAluno = sc.nextLine();
-                        boolean encontrado = false;
-                        for (Aluno a: listaAlunos) {
-                            if (a.getCpf().equals(cpfAluno)) {
-                                System.out.print("Novo nome: ");
-                                String novoNomeAluno = sc.nextLine();
-                                a.setNome(novoNomeAluno);
-                                System.out.println("Nome atualizado com sucesso!");
-                                encontrado = true;
-                                break;
-                            }
-                        }
-                        if (!encontrado) {
-                            System.out.println("Aluno do CPF" + cpfAluno + " não encontrado!");
-                        }
+                    System.out.print("Informe o Cpf do aluno: ");
+                    String cpfAluno = sc.nextLine();
+
+                    switch (opMudarInfoAluno) {
+                        case 1:
+                            System.out.print("Informe o novo nome: ");
+                            String novoNome = sc.nextLine();
+                                if (sistemaAlun.alterarNomeAluno(cpfAluno, novoNome)) {
+                                    System.out.println("Nome alterado com sucesso!");
+                                }
+                                else {
+                                    System.out.println("Aluno com CPF " + cpfAluno + " não encontrado.");
+                                }
+                            break;
+                        case 2:
+                            System.out.print("Nova idade: ");
+                            int novaIdade = sc.nextInt();
+                            sc.nextLine();
+                            sistemaAlun.alterarIdadeAluno(cpfAluno, novaIdade);
+                            break;
                     }
                 case 6:
                     System.out.println("Obrigado!");
