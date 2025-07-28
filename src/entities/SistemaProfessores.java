@@ -21,4 +21,24 @@ public class SistemaProfessores {
             System.out.println("Não há professores cadastrados!");
         }
     }
+
+    public boolean alterarNomeProfessor(String cpf, String novoNome) {
+        for (Professor professor : listaProfessores) {
+            if (professor.getCpf().equals(cpf)) {
+                professor.setNome(novoNome);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean alterarIdadeProfessor(String cpf, int novaIdade) {
+        for (Professor professor : listaProfessores) {
+            if (professor.getCpf().equals(cpf)) {
+                professor.setIdade(novaIdade);
+                return true;
+            }
+        }
+        return false;
+    }
 }
