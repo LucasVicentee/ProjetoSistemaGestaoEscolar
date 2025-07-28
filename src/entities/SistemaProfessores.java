@@ -41,4 +41,34 @@ public class SistemaProfessores {
         }
         return false;
     }
+
+    public boolean alterarCpfProfessor(String cpf, String novoCpf) {
+        for (Professor professor : listaProfessores) {
+            if (professor.getCpf().equals(cpf)) {
+                professor.setCpf(novoCpf);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean alterarRfProfessor(String cpf, int rf) {
+        for (Professor professor : listaProfessores) {
+            if (professor.getCpf().equals(cpf)) {
+                professor.setRf(rf);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean alterarSalario(String cpf, double novoSalario) {
+        for (Professor professor : listaProfessores) {
+            if (professor.getCpf().equals(cpf)) {
+                professor.setSalario(novoSalario);
+                return true;
+            }
+        }
+        return false;
+    }
 }

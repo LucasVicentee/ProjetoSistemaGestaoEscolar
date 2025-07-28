@@ -90,6 +90,7 @@ public class Main {
                             else {
                                 System.out.println("Aluno com o CPF " + cpfAluno + " não encontrado.");
                             }
+                            break;
                         case 4:
                             int novoRa = leitor.lerInt("Informe o novo RA: ");
                             if (sistemaAlun.alterarRaAluno(cpfAluno, novoRa)) {
@@ -98,6 +99,7 @@ public class Main {
                             else {
                                 System.out.println("Aluno com o CPF " + cpfAluno + " não encontrado.");
                             }
+                            break;
                     }
                     break;
                 case 6:
@@ -107,6 +109,56 @@ public class Main {
                     System.out.println("3 - Para modificar o CPF");
                     System.out.println("4 - Para modificar o RF");
                     System.out.println("5 - Para modificar o salário");
+                    int opMudarInfoProfessor = leitor.lerInt("Informe a opção desejada: ");
+                    String cpfProfessor = leitor.lerString("Informe o CPF do professor: ");
+
+                    switch (opMudarInfoProfessor) {
+                        case 1:
+                            String novoNome = leitor.lerString("Informe o novo nome: ");
+                            if (sistemaProf.alterarNomeProfessor(cpfProfessor, novoNome)) {
+                                System.out.println("Nome alterado com sucesso!");
+                            }
+                            else {
+                                System.out.println("Professor com o CPF " + cpfProfessor + " não encontrado.");
+                            }
+                            break;
+                        case 2:
+                            int novaIdade = leitor.lerInt("Informe a nova idade: ");
+                            if (sistemaProf.alterarIdadeProfessor(cpfProfessor, novaIdade)) {
+                                System.out.println("Idade alterada com sucesso!");
+                            }
+                            else {
+                                System.out.println("Professor com o CPF " + cpfProfessor + " não encontrado.");
+                            }
+                            break;
+                        case 3:
+                            String novoCpf = leitor.lerString("Informe o novo CPF: ");
+                            if (sistemaProf.alterarCpfProfessor(cpfProfessor, novoCpf)) {
+                                System.out.println("CPF atualizado com sucesso!");
+                            }
+                            else {
+                                System.out.println("Professor com o CPF " + cpfProfessor + " não encontrado.");
+                            }
+                            break;
+                        case 4:
+                            int novoRf = leitor.lerInt("Informe o novo RF: ");
+                            if (sistemaProf.alterarRfProfessor(cpfProfessor, novoRf)) {
+                                System.out.println("RF alterado com sucesso!");
+                            }
+                            else {
+                                System.out.println("Professor com o CPF " + cpfProfessor + " não encontrado.");
+                            }
+                            break;
+                        case 5:
+                            double novoSalario = leitor.lerDouble("Informe o novo salário: ");
+                            if (sistemaProf.alterarSalario(cpfProfessor, novoSalario)) {
+                                System.out.println("Salário alterado com sucesso!");
+                            }
+                            else {
+                                System.out.println("Professor com o CPF " + cpfProfessor + " não encontrado.");
+                            }
+                            break;
+                    }
                     break;
                 default:
                     System.out.println("Opção inválida!");
