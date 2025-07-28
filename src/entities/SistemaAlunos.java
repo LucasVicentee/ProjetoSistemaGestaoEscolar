@@ -1,6 +1,5 @@
 package entities;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SistemaAlunos {
@@ -12,8 +11,14 @@ public class SistemaAlunos {
     }
 
     public void listarAlunos() {
-        for (Aluno aluno : listaAlunos) {
-            System.out.println(aluno);
+        if (!listaAlunos.isEmpty()) {
+            System.out.println("Todos os alunos já cadastrados: ");
+            for (Aluno aluno : listaAlunos) {
+                System.out.println(aluno);
+            }
+        }
+        else {
+            System.out.println("Não há alunos cadastrados!");
         }
     }
 

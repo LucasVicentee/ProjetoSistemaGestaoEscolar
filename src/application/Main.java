@@ -16,9 +16,6 @@ public class Main {
         SistemaAlunos sistemaAlun = new SistemaAlunos();
         SistemaProfessores sistemaProf = new SistemaProfessores();
 
-        ArrayList<Aluno> listaAlunos = new ArrayList<>();
-        ArrayList<Professor> listaProfessores = new ArrayList<>();
-
         char repeticao;
         do {
             System.out.println("Informe a opção desejada: ");
@@ -37,8 +34,7 @@ public class Main {
                     int idade = leitor.lerInt("Idade: ");
                     String cpf = leitor.lerString("CPF: ");
                     int ra = leitor.lerInt("RA: ");
-                    Aluno aluno = new Aluno(nome, idade, cpf, ra);
-                    listaAlunos.add(aluno);
+                    sistemaAlun.adicionarAluno(new Aluno(nome, idade, cpf, ra));
                     break;
                 }
                 case 2: {
@@ -49,31 +45,14 @@ public class Main {
                     int ra = leitor.lerInt("RA: ");
                     int rf = leitor.lerInt("RF: ");
                     double salario = leitor.lerDouble("Salário: ");
-                    Professor professor = new Professor(nome, idade, cpf, rf, salario);
-                    listaProfessores.add(professor);
+                    sistemaProf.adicionarProfessor(new Professor(nome, idade, cpf, rf, salario));
                     break;
                 }
                 case 3:
-                    if (!listaAlunos.isEmpty()) {
-                        System.out.println("Todos os alunos já cadastrados: ");
-                        for (Aluno alunoLista : listaAlunos) {
-                            System.out.println(alunoLista);
-                        }
-                    }
-                    else {
-                        System.out.println("Não há alunos cadastrados!");
-                    }
+                    sistemaAlun.listarAlunos();
                     break;
                 case 4:
-                    if (!listaProfessores.isEmpty()) {
-                        System.out.println("Todos os professores já cadastrados: ");
-                        for (Professor professorLista : listaProfessores) {
-                            System.out.println(professorLista);
-                        }
-                    }
-                    else {
-                        System.out.println("Não há professores cadastrados!");
-                    }
+                    sistemaProf.listarProfessores();
                     break;
                 case 5:
                     System.out.println("Informe o que deseja ser mudado das informações do aluno: ");
