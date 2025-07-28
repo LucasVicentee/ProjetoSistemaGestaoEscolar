@@ -13,7 +13,6 @@ public class Pessoa {
     }
 
     public String getNome() {
-
         return nome;
     }
 
@@ -22,7 +21,6 @@ public class Pessoa {
     }
 
     public int getIdade() {
-
         return idade;
     }
 
