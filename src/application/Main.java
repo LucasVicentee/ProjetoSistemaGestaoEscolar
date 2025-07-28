@@ -1,9 +1,6 @@
 package application;
 
-import entities.Aluno;
-import entities.Professor;
-import entities.SistemaAlunos;
-import entities.SistemaProfessores;
+import entities.*;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -15,6 +12,7 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
+        LeitorDeDados leitor = new LeitorDeDados(sc);
         SistemaAlunos sistemaAlun = new SistemaAlunos();
         SistemaProfessores sistemaProf = new SistemaProfessores();
 
@@ -30,46 +28,31 @@ public class Main {
             System.out.println("4 - Para listar os professores já cadastrados");
             System.out.println("5 - Para modificar as informações de um aluno");
             System.out.println("6 - Para Sair");
-            System.out.print("Opção: ");
-
-            int opcao;
-            opcao = sc.nextInt();
-            sc.nextLine();
+            int opcao = leitor.lerInt("Opção: ");
 
             switch (opcao) {
-                case 1:
+                case 1: {
                     System.out.println("Informe os dados do aluno: ");
-                    System.out.print("Nome: ");
-                    String nome = sc.nextLine();
-                    System.out.print("Idade: ");
-                    int idade = sc.nextInt();
-                    sc.nextLine();
-                    System.out.print("CPF: ");
-                    String cpf = sc.nextLine();
-                    System.out.print("RA: ");
-                    int ra = sc.nextInt();
-
+                    String nome = leitor.lerString("Nome: ");
+                    int idade = leitor.lerInt("Idade: ");
+                    String cpf = leitor.lerString("CPF: ");
+                    int ra = leitor.lerInt("RA: ");
                     Aluno aluno = new Aluno(nome, idade, cpf, ra);
                     listaAlunos.add(aluno);
                     break;
-                case 2:
+                }
+                case 2: {
                     System.out.println("Informe os dados do professor: ");
-                    System.out.print("Nome: ");
-                    nome = sc.nextLine();
-                    System.out.print("Idade: ");
-                    idade = sc.nextInt();
-                    sc.nextLine();
-                    System.out.print("CPF: ");
-                    cpf = sc.nextLine();
-                    System.out.print("RF: ");
-                    int rf = sc.nextInt();
-                    sc.nextLine();
-                    System.out.print("Salário: ");
-                    double salario = sc.nextDouble();
-
+                    String nome = leitor.lerString("Nome: ");
+                    int idade = leitor.lerInt("Idade: ");
+                    String cpf = leitor.lerString("CPF: ");
+                    int ra = leitor.lerInt("RA: ");
+                    int rf = leitor.lerInt("RF: ");
+                    double salario = leitor.lerDouble("Salário: ");
                     Professor professor = new Professor(nome, idade, cpf, rf, salario);
                     listaProfessores.add(professor);
                     break;
+                }
                 case 3:
                     if (!listaAlunos.isEmpty()) {
                         System.out.println("Todos os alunos já cadastrados: ");
