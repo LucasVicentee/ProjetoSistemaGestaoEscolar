@@ -47,9 +47,9 @@ public class Professor extends Pessoa {
     @Override
     public String toString() {
         return String.format("Informações do professor: " +
-                "\nNome: %s, " +
-                "\nIdade: %d, " +
-                "\nCPF: %s, " +
+                "\nNome: %s " +
+                "\nIdade: %d " +
+                "\nCPF: %s " +
                 "\nNúmero do RF: %d" +
                 "\nSalário: %f", nome, idade, cpf, rf, salario);
     }

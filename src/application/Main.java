@@ -82,8 +82,15 @@ public class Main {
                     }
                     break;
                 case 4:
-                    System.out.println("Todos os professores já cadastrados: ");
-                    sistemaProf.listarProfessor();
+                    if (!listaProfessores.isEmpty()) {
+                        System.out.println("Todos os professores já cadastrados: ");
+                        for (Professor professorLista : listaProfessores) {
+                            System.out.println(professorLista);
+                        }
+                    }
+                    else {
+                        System.out.println("Não há professores cadastrados!");
+                    }
                     break;
                 case 5:
                     System.out.println("Informe o que deseja ser mudado das informações do aluno: ");
