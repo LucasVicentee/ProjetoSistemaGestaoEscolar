@@ -12,7 +12,7 @@ public class SistemaProfessores {
 
     public void listarProfessores() {
         if (!listaProfessores.isEmpty()) {
-            System.out.println("Todos os alunos já cadastrados: ");
+            System.out.println("Todos os professores já cadastrados: ");
             for (Professor professor : listaProfessores) {
                 System.out.println(professor);
             }
