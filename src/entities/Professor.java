@@ -4,28 +4,14 @@ import java.util.ArrayList;
 
 public class Professor extends Pessoa {
 
-    private ArrayList<String> materias;
     private int rf;
     private double salario;
 
 
     public Professor(String nome, int idade, String cpf, int rf, double salario) {
         super(nome, idade, cpf);
-        this.materias = new ArrayList<>();
         this.rf = rf;
         this.salario = salario;
-    }
-
-    public void AdicionarMateria(String materias) {
-        this.materias.add(materias);
-    }
-
-    public void removerMateria(String materias) {
-        this.materias.add(materias);
-    }
-
-    public ArrayList<String> getMateria() {
-        return materias;
     }
 
     public int getRf() {

@@ -1,10 +1,11 @@
 package entities;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class SistemaProfessores {
 
-    public ArrayList<Professor> listaProfessores = new ArrayList<>();
+    public List<Professor> listaProfessores = new LinkedList<>();
 
     public void adicionarProfessor(Professor professor) {
         listaProfessores.add(professor);

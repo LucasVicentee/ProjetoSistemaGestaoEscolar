@@ -167,7 +167,7 @@ public class Main {
         } while (repeticao == 'S' || repeticao == 's');
         System.out.println("Obrigado!");
 
-        //Feliz pelo meu desenvolvimento e determinação na Área da TI :)
         sc.close();
+        //Feliz pelo meu desenvolvimento e determinação na Área da TI :)
     }
 }

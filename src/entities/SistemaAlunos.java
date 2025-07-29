@@ -1,10 +1,11 @@
 package entities;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class SistemaAlunos {
 
-    private ArrayList<Aluno> listaAlunos = new ArrayList<>();
+    private List<Aluno> listaAlunos = new LinkedList<>();
 
     public void adicionarAluno(Aluno aluno) {
         listaAlunos.add(aluno);
